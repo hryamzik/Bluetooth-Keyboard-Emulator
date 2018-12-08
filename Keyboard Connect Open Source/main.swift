@@ -9,12 +9,12 @@
 import Cocoa
 
 func main(arguments: [String]) {
-    let application = NSApplication.sharedApplication()
+    let application =  NSApplication.shared()
     let delegate = AppDelegate()
     application.delegate = delegate
 
     func quit(signal: Int32) {
-        NSApplication.sharedApplication().terminate(NSNumber(int: signal))
+        NSApplication.shared().terminate(NSNumber(value: signal))
     }
 
     signal(SIGHUP, quit)
@@ -25,4 +25,4 @@ func main(arguments: [String]) {
     application.run()
 }
 
-main(Process.arguments)
+main(arguments: CommandLine.arguments)
