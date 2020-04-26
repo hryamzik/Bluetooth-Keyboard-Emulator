@@ -9,12 +9,12 @@
 import Cocoa
 
 func main(arguments: [String]) {
-    let application =  NSApplication.shared()
+    let application =  NSApplication.shared
     let delegate = AppDelegate()
     application.delegate = delegate
 
     func quit(signal: Int32) {
-        NSApplication.shared().terminate(NSNumber(value: signal))
+        NSApplication.shared.terminate(NSNumber(value: signal))
     }
 
     signal(SIGHUP, quit)
